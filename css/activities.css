@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    outline: none;
+    font-family: 'Cairo', sans-serif;
+}
+
+::selection {
+    background: var(--main-color);
+    color: #FFF;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000b0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
+}
+
+:root {
+    /* Fonts */
+    --Poppins: 'Poppins';
+    --Cairo: 'Cairo', sans-serif;
+    /* Colors */
+    --main-color: #0099ff;
+    --first-color: #0e2431;
+    --hover-color: #008ae6;
+    /* Transition */
+    --transition: 0.5s ease;
+    /* Box Shadow */
+    --box-shadow: 0 0 10px #b8b8b8;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+span {
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+
+/* ----------------------------------------------------- */
+
+.activities {
+    padding: 3rem 0;
+}
+
+.activities .container h2, .pics .container h2, .sch-lbi .container h2, h3 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 4rem 0;
+    align-items: center;
+    row-gap: 40px;
+    column-gap: 40px;
+}
+
+.row .item {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.row .item i{
+    color: var(--main-color);
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.row .item:hover {
+    transform: scale(1.1);
+}
+
+.row .item img {
+    width: 280px;
+    border-radius: 5px;
+}
+
+/* Pictures Section */
+
+.pics .container .row .item {
+    box-shadow: none;
+}
+
+.pics .container .row .item:hover {
+    transform: none;
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    background: var(--main-color);
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+footer .logo-links a {
+    color: #Fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+footer .navlinks ul {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+footer .navlinks ul li {
+    margin-left: 20px;
+}
+
+footer .navlinks ul li a {
+    color: #fff;
+    font-weight: 600;
+}
+
+footer p {
+    color: #fff;
+    font-weight: 600;
+}
+
+.ele {
+    color: #fff;
+    font-weight: 500;
+}
+
+.ele span {
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+}
+
+/* School Li */
+
+.sch-lbi .container .content {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.sch-lbi .container .content p {
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+.sch-lbi .container .content ul {
+    direction: rtl;
+    text-align: right;
+    margin-top: 30px;
+    line-height: 2.5;
+}
+
+.sch-lbi .container .content ul li {
+    font-weight: 600;
+}
+
+.sch-lbi .container .content h3 {
+    margin-top: 50px;
+}
+
+.sch-lbi .container .content .options img {
+    width: 100px;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    Footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem 2rem;
+    }
+
+    footer .logo-links a {
+        font-size: 1rem;
+    }
+
+    Footer a, p {
+        font-size: 13px;
+    }
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ------------------------------------------------------ */
+
+@media (max-width: 425px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+    
+    .pics .container .row {
+        grid-template-columns: 1fr;
+    }
+
+    .row .item img {
+        width: 300px;
+        border-radius: 5px;
+    }
+
+    Footer {
+        grid-template-columns: 1fr;
+        padding: 1rem 2rem;
+    }
+
+    footer .logo-links a {
+        font-size: 1rem;
+    }
+
+    Footer a, p {
+        font-size: 10px;
+    }
+
+    
+    .sch-lbi .container .content .options .row {
+        grid-template-columns: 1fr;
+    }
+    .activities .container h2, .pics .container h2, .sch-lbi .container h2, h3 {
+        font-size: 1.9rem;
+    }
+    .ele span {
+        font-size: 13px;
+    }
+}
+
+/* ------------------------------------------------------ */
+
+@media (max-width: 375px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .pics .container .row {
+        grid-template-columns: 1fr;
+    }
+
+    .row .item img {
+        width: 250px;
+        border-radius: 5px;
+    }
+
+    Footer {
+        grid-template-columns: 1fr;
+        padding: 1rem 2rem;
+    }
+
+    footer .logo-links a {
+        font-size: 1rem;
+    }
+
+    Footer a, p {
+        font-size: 10px;
+    }
+
+    .activities .container h2, .pics .container h2, .sch-lbi .container h2, h3 {
+        font-size: 1.8rem;
+    }
+    .ele span {
+        font-size: 13px;
+    }
+}
+
+/* ------------------------------------------------------ */
+
+@media (max-width: 320px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+    
+    .pics .container .row {
+        grid-template-columns: 1fr;
+    }
+
+    .pics .container h2 {
+        font-size: 1.5rem;
+    }
+
+    .row .item img {
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    Footer {
+        grid-template-columns: 1fr;
+        padding: 1rem 2rem;
+    }
+
+    footer .logo-links a {
+        font-size: 1rem;
+    }
+
+    .sch-lbi .container .content ul li {
+        font-size: 12px;
+    }
+
+    Footer a, p {
+        font-size: 10px;
+    }
+    .activities .container h2, .pics .container h2, .sch-lbi .container h2, h3 {
+        font-size: 1.5rem;
+    }
+    .ele span {
+        font-size: 13px;
+    }
+}
+
+/* -------------------------------------------------------- */
+
+@media (width: 280px) {
+    .row .item img {
+        width: 180px;
+    }
+    .activities .container h2, .pics .container h2, .sch-lbi .container h2, h3 {
+        font-size: 1.3rem;
+    }
+    .row .item {
+        padding: 1rem;
+    }
+    .sch-lbi .container .content .options img {
+        width: 80px
+    }
+    .sch-lbi .container .content .options p {
+        margin-top: 10px;
+    }
+    .sch-lbi .container .content ul li {
+        font-size: 13px;
+    }
+    .ele span {
+        font-size: 13px;
+    }
+}
